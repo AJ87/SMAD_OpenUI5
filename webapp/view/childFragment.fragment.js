@@ -43,11 +43,6 @@ sap.ui.jsfragment("SMADJS.view.childFragment", {
     });
     columns.push(oColumn);
 
-    oColumn = new sap.m.Column({
-      header: new sap.m.Text({text:"Friend Request"})
-    });
-    columns.push(oColumn);
-
 		oColumn = new sap.m.Column({
       header: new sap.m.Text({text:"Shirt Size"})
     });

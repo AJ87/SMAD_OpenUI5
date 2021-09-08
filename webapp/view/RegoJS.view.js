@@ -220,8 +220,8 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 						text:"Birthdate",
 						required:true
 					});
-					var minDate = new Date(2007,0,1);
-					var maxDate = new Date(2015,11,31);
+					var minDate = new Date(2008,0,1);
+					var maxDate = new Date(2016,11,31);
 					bindValue = "{/child/" + arrayNumber + "/birthdate}";
 					oChildInput = new sap.m.DatePicker(oView.createId("InputChildBirthdate" + counter),{
 						change:[oController.childValidation,oController],
@@ -254,6 +254,9 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 						},{
 							key:"Female",
 							text:"Female"
+						},{
+							key:"Other",
+							text:"Other gender identity"
 						}]
 					});
 					oChildForm.addContent(oChildLabel);
@@ -310,7 +313,7 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 					oChildForm.addContent(oChildInput);
 
 					oChildLabel = new sap.m.Label({
-						text:"Year (beginning February 2021)",
+						text:"Year (beginning February 2022)",
 						required:true
 					});
 					bindValue = "{/child/" + arrayNumber + "/year}";
@@ -379,17 +382,18 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 					oChildForm.addContent(oChildLabel);
 					oChildForm.addContent(oChildInput);
 
-					oChildLabel = new sap.m.Label({
-						text:"One friend request (must be same year and mutual)",
-						required:false
-					});
-					bindValue = "{/child/" + arrayNumber + "/friend}";
-					oChildInput = new sap.m.Input(oView.createId("InputChildFriend" + counter),{
-						value:bindValue,
-						maxLength:10
-					});
-					oChildForm.addContent(oChildLabel);
-					oChildForm.addContent(oChildInput);
+					// No longer allowing friend requests
+					// oChildLabel = new sap.m.Label({
+					// 	text:"One friend request (must be same year and mutual)",
+					// 	required:false
+					// });
+					// bindValue = "{/child/" + arrayNumber + "/friend}";
+					// oChildInput = new sap.m.Input(oView.createId("InputChildFriend" + counter),{
+					// 	value:bindValue,
+					// 	maxLength:10
+					// });
+					// oChildForm.addContent(oChildLabel);
+					// oChildForm.addContent(oChildInput);
 
 					oChildLabel = new sap.m.Label({
 						text:"Medicare Number",

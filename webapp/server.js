@@ -15,10 +15,10 @@ const options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/smadcamp.com/fullchain.pem')
 };
 
-const max_children = 70; // 125
+const max_children = 90; // 125
 const max_regos = 600; // 600
 const overrideCode = 'd8a4cbba-a754-4bbb-83ca-736h9e056a66';
-const overridePreCode = '6f121ebe-c9ef-4222-b943-8304160c6f1d';
+const overridePreCode = '9eae1b8a-0ed4-45fb-9084-e12e49d06595';
 
 var toLocalDate = function(utcDate) {
   var TZOffsetMs = 15*60*60*1000;
@@ -108,12 +108,19 @@ console.log(overridePre);
             if (overridePre === false && paramArray[0] === 'waitlist' && paramArray[1] === 'true') {
               waitlist = true;
             }
+            // automatic applying of the waitlist in backend
+            if (regoFunction.getNumberOfChildren() > max_children) {
+              waitlist = true;
+              console.log("Waitlisting...");
+            }
             var rego = regoFunction.createRego(json);
             rego.saveData(waitlist)
             .then(
               function fullfilled(result) {
                 if (waitlist) {
-                  response.writeHead(201, { 'Content-Type': 'text/html' });
+                  // no longer want to differentiate between waitlist and not
+                  // response.writeHead(201, { 'Content-Type': 'text/html' });
+                  response.writeHead(200, { 'Content-Type': 'text/html' });
                 } else {
                   response.writeHead(200, { 'Content-Type': 'text/html' });
                 };
@@ -407,7 +414,7 @@ console.log(overridePre);
         });
       }
     }
-}).listen(443); //3125 loally and 80 on aws 443 and 8000 for https
+}).listen(443); //443 for prod //3125 locally
 console.log('Server running at http://127.0.0.1:80/');
 
 },
@@ -423,4 +430,4 @@ http.createServer(function(req,res) {
   res.writeHead(308, {'Location': 'https://' + 'smadcamp.com' + req.url});
 
   res.end();
-}).listen(80);
+}).listen(80); // 80 for prod and 8000 for testing

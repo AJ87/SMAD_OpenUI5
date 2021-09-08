@@ -12,9 +12,13 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		if (oController.status === 200) {
-			var text2 = "Congratulations you are now registered. Please pay within the week or your spot may be offered to another family. Cost is $80/child for the week. Payment details:\n\n" +
-			"Account Name: CANBERRA BAPTIST CHURCH - SMAD CAMP\nBSB: 062 901\nAccount Number: 1021 7815\nReference: Your child/ren's last name" +
-			"\n\nYou will receive an email in the next 24 hours. Please do not contact SMAD CAMP before then.";
+			// No longer want to provide bank details and immediately have people registered
+			// var text2 = "Congratulations you are now registered. Please pay within the week or your spot may be offered to another family. Cost is $80/child for the week. Payment details:\n\n" +
+			// "Account Name: CANBERRA BAPTIST CHURCH - SMAD CAMP\nBSB: 062 901\nAccount Number: 1021 7815\nReference: Your child/ren's last name" +
+			// "\n\nYou will receive an email in the next 24 hours. Please do not contact SMAD CAMP before then.";
+
+			// new message for SMAD 2022
+			var text2 = "You have sucessfully submitted your registration. If you are successful you will get an email with details on how to pay within the next 2 hours."
 		} else if (oController.status === 201) {
 			text2 = "You will be contacted if a place becomes available.";
 		}	else {
@@ -32,7 +36,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		switch (oController.status) {
-			case 200: title = "Registration Successful";
+			case 200: title = "Registration Submitted";
 				break;
 			case 201: title = "Waitlisted Successfully";
 				break;

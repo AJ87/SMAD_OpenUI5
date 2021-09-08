@@ -56,27 +56,28 @@ sap.ui.define([
 			var preRego = false;
 
 			// for testing - comment out for live
-			//oDate = new Date("October 31, 2021 10:00:00");
+			// oDate = new Date("October 9, 2021 10:00:00");
 
 			this._overridePre = false;
 			// override pre rego being closed
 			this._sValue = jQuery.sap.getUriParameters().get("regoID");
-			if (this._sValue === '6f121ebe-c9ef-4222-b943-8304160c6f1d') {
+			if (this._sValue === '9eae1b8a-0ed4-45fb-9084-e12e49d06595') {
 				this._overridePre = true;
 			}
 
 			// need to check year here
+			// need to check daylight savings time
 			var year = oDate.getYear() + 1900; // years start counting from 1900
-			if (year < 2021 && this._overridePre === false) { // year of SMAD camp
-				if (oDate.getMonth() < 9) { // October - months start from 0
+			if (year < 2022 && this._overridePre === false) { // year of SMAD camp
+				if (oDate.getMonth() < 9) { // October is 9 - months start from 0
 					this._oApp.to(this._oWizardPreRegoPage);
 					preRego = true;
 				} else {
-					if (oDate.getMonth() === 9 && oDate.getDate() < 31) { //day of month
+					if (oDate.getMonth() === 9 && oDate.getDate() < 9) { //day of month
 						this._oApp.to(this._oWizardPreRegoPage);
 						preRego = true;
 					} else {
-						if (oDate.getDate() === 19 && oDate.getHours() < 10) {
+						if (oDate.getDate() === 9 && oDate.getHours() < 10) {
 							this._oApp.to(this._oWizardPreRegoPage);
 							preRego = true;
 						}
@@ -92,9 +93,10 @@ sap.ui.define([
 					if (this.readyState === 4) {
 						if (this.status === 200) {
 
-						} else if (this.status === 503) {
-							var message = "Registration and waitlist full";
-							that._oApp.to(that._oWizardWaitlistFullPage);
+						} else if (this.status === 500) {
+							// no longer want to make waitlist part of UI - automatic in backend
+							// var message = "Registration and waitlist full";
+							// that._oApp.to(that._oWizardWaitlistFullPage);
 						} else {
 							var message = "Registration full";
 							that._oApp.to(that._oWizardPostRegoPage);
