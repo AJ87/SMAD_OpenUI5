@@ -2,7 +2,7 @@ sap.ui.jsfragment("SMADJS.view.AttendanceFragment", {
 	createContent: function(oController) {
 
 		var oText1 = new sap.m.Text({
-			text:"I understand that my child/ren cannot attend SMAD Camp if they are showing any symptoms of Covid or have been in a Covid hotspot two weeks prior to the week of SMAD."
+			text:"I understand that my child/ren cannot attend SMAD Camp if they are showing any symptoms of Covid or have been to a Covid exposure location."
 		});
 
 		var oPanel = new sap.m.Panel({
@@ -12,7 +12,7 @@ sap.ui.jsfragment("SMADJS.view.AttendanceFragment", {
 		});
 
 		var oText2 = new sap.m.Text({
-			text:"Please refer to the ACT website: https://www.covid19.act.gov.au/community/travel"
+			text:"Please refer to the ACT website: https://www.covid19.act.gov.au/"
 		});
 
 		var oPanel2 = new sap.m.Panel({

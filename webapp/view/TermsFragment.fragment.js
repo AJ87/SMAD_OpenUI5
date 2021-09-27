@@ -2,7 +2,7 @@ sap.ui.jsfragment("SMADJS.view.TermsFragment", {
 	createContent: function(oController) {
 
 		var oText1 = new sap.m.Text({
-			text:"I understand the full SMAD Camp fees and complete registration forms must be received for my child/ren to be enrolled."
+			text:"I understand the full SMAD Camp fees must be received within 1 week of receiving a place for my child/ren to be enrolled."
 		});
 
 		var oButtonAccept = new sap.m.Button({
