@@ -87,7 +87,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 
 		var oSubmitPage = new sap.m.Page({
 			title:title,
-			content: [oPanel,oPanel2,oPanel3,oPanel4,oPanel5,oPanel6],
+			content: [oPanel2,oPanel3,oPanel4,oPanel5,oPanel6],
 			showNavButton:false
 		});
 
