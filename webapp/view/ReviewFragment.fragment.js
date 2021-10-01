@@ -228,16 +228,6 @@ sap.ui.jsfragment("SMADJS.view.ReviewFragment", {
 			oSimpleForm.addContent(oText);
 
 			oLabel = new sap.m.Label({
-				text:"Friend request"
-			});
-			bindValue = "{/child/" + i + "/friend}";
-			oText = new sap.m.Text(this.createId("ChildFriend" + i),{
-				text:bindValue
-			});
-			oSimpleForm.addContent(oLabel);
-			oSimpleForm.addContent(oText);
-
-			oLabel = new sap.m.Label({
 				text:"Medicare Number"
 			});
 			bindValue = "{/child/" + i + "/medicare1}";
