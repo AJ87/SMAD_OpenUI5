@@ -36,7 +36,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		var oText3 = new sap.m.Text({
-			text:"We have a new registration system. We will be working as fast as we can to process forms and you will hear from as soon as possible."
+			text:"We have a new registration system. We will be working as fast as we can to process forms and you will hear from us as soon as possible."
 		});
 
 		var oPanel3 = new sap.m.Panel({
@@ -66,7 +66,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		var oText6 = new sap.m.Text({
-			text:"Payment details will be sent out if you receive a place. Do not pay until you received this email."
+			text:"Payment details will be sent out if you receive a place. Do not pay until you receive this email."
 		});
 
 		var oPanel6 = new sap.m.Panel({
