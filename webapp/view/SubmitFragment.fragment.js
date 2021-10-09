@@ -18,7 +18,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 			// "\n\nYou will receive an email in the next 24 hours. Please do not contact SMAD CAMP before then.";
 
 			// new message for SMAD 2022
-			var text2 = "Thank you for submitting your forms. Your registration is pending."
+			var text2 = "Thank you for submitting your form. SMAD Camp 2022 is full. You have been waitlisted."
 //		} else if (oController.status === 201) {
 //			text2 = "You will be contacted if a place becomes available.";
 		}	else {
@@ -46,7 +46,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		var oText4 = new sap.m.Text({
-			text:"Emails will be sent informing you of whether you received a place or were waitlisted."
+			text:"Emails will be sent informing you if a place becomes available."
 		});
 
 		var oPanel4 = new sap.m.Panel({
@@ -56,7 +56,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 		});
 
 		var oText5 = new sap.m.Text({
-			text:"We strongly encourage you not to contact SMAD Camp during this time to receive any updates as this slows down the process."
+			text:"Please contact smadcamp@hotmail.com if you have a query."
 		});
 
 		var oPanel5 = new sap.m.Panel({
@@ -87,7 +87,7 @@ sap.ui.jsfragment("SMADJS.view.SubmitFragment", {
 
 		var oSubmitPage = new sap.m.Page({
 			title:title,
-			content: [oPanel2,oPanel3,oPanel4,oPanel5,oPanel6],
+			content: [oPanel2,oPanel4,oPanel5],
 			showNavButton:false
 		});
 
