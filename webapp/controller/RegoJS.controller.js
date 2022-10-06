@@ -56,7 +56,7 @@ sap.ui.define([
 			var preRego = false;
 
 			// for testing - comment out for live
-			// oDate = new Date("October 9, 2021 10:00:00");
+			 //oDate = new Date("October 22, 2022 10:00:00");
 
 			this._overridePre = false;
 			// override pre rego being closed
@@ -68,12 +68,12 @@ sap.ui.define([
 			// need to check year here
 			// need to check daylight savings time
 			var year = oDate.getYear() + 1900; // years start counting from 1900
-			if (year < 2022 && this._overridePre === false) { // year of SMAD camp
+			if (year < 2023 && this._overridePre === false) { // year of SMAD camp
 				if (oDate.getMonth() < 9) { // October is 9 - months start from 0
 					this._oApp.to(this._oWizardPreRegoPage);
 					preRego = true;
 				} else {
-					if (oDate.getMonth() === 9 && oDate.getDate() < 9) { //day of month
+					if (oDate.getMonth() === 9 && oDate.getDate() < 22) { //day of month
 						this._oApp.to(this._oWizardPreRegoPage);
 						preRego = true;
 					} else {

@@ -220,8 +220,8 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 						text:"Birthdate",
 						required:true
 					});
-					var minDate = new Date(2008,0,1);
-					var maxDate = new Date(2016,11,31);
+					var minDate = new Date(2009,0,1);
+					var maxDate = new Date(2017,11,31);
 					bindValue = "{/child/" + arrayNumber + "/birthdate}";
 					oChildInput = new sap.m.DatePicker(oView.createId("InputChildBirthdate" + counter),{
 						change:[oController.childValidation,oController],
@@ -313,7 +313,7 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 					oChildForm.addContent(oChildInput);
 
 					oChildLabel = new sap.m.Label({
-						text:"Year (beginning February 2022)",
+						text:"Year (beginning February 2023)",
 						required:true
 					});
 					bindValue = "{/child/" + arrayNumber + "/year}";

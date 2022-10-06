@@ -2,7 +2,7 @@ sap.ui.jsfragment("SMADJS.view.PreRegoFragment", {
 	createContent: function(oController) {
 
 		var oText1 = new sap.m.Text({
-			text:"Registration opens 9 October at 10am."
+			text:"Registration opens 22 October at 10am."
 		});
 
 		var oPanel = new sap.m.Panel({
