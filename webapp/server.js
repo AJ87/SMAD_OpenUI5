@@ -15,7 +15,7 @@ const options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/smadcamp.com/fullchain.pem')
 };
 
-const max_children = 140; // 125 likely 140
+const max_children = 160; // 125 likely 140
 const max_regos = 600; // 600
 const overrideCode = 'd8a4cbba-a754-4bbb-83ca-736h9e056a66';
 const overridePreCode = '9eae1b8a-0ed4-45fb-9084-e12e49d06595';
