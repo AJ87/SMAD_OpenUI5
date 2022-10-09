@@ -15,7 +15,7 @@ const options = {
   cert: fs.readFileSync('/etc/letsencrypt/live/smadcamp.com/fullchain.pem')
 };
 
-const max_children = 1; // 125
+const max_children = 140; // 125 likely 140
 const max_regos = 600; // 600
 const overrideCode = 'd8a4cbba-a754-4bbb-83ca-736h9e056a66';
 const overridePreCode = '9eae1b8a-0ed4-45fb-9084-e12e49d06595';
@@ -118,9 +118,9 @@ console.log(overridePre);
             .then(
               function fullfilled(result) {
                 if (waitlist) {
-                  // no longer want to differentiate between waitlist and not
-                  // response.writeHead(201, { 'Content-Type': 'text/html' });
-                  response.writeHead(200, { 'Content-Type': 'text/html' });
+                  // still need to differentiate between waitlist and not - SMAD 2023
+                  response.writeHead(201, { 'Content-Type': 'text/html' });
+                  //response.writeHead(200, { 'Content-Type': 'text/html' });
                 } else {
                   response.writeHead(200, { 'Content-Type': 'text/html' });
                 };

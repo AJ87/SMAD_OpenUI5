@@ -2,7 +2,7 @@ sap.ui.jsfragment("SMADJS.view.AttendanceFragment", {
 	createContent: function(oController) {
 
 		var oText1 = new sap.m.Text({
-			text:"I understand that my child/ren cannot attend SMAD Camp if they are showing any symptoms of Covid or have been to a Covid exposure location."
+			text:"I understand that my child/ren cannot attend SMAD Camp if they are showing any symptoms of Covid or have tested positive to Covid 19."
 		});
 
 		var oPanel = new sap.m.Panel({
@@ -11,15 +11,15 @@ sap.ui.jsfragment("SMADJS.view.AttendanceFragment", {
 			content:[oText1]
 		});
 
-		var oText2 = new sap.m.Text({
-			text:"Please refer to the ACT website: https://www.covid19.act.gov.au/"
-		});
-
-		var oPanel2 = new sap.m.Panel({
-			class:"SapUiResponsiveMargin",
-			width:"auto",
-			content:[oText2]
-		});
+		// var oText2 = new sap.m.Text({
+		// 	text:"Please refer to the ACT website: https://www.covid19.act.gov.au/"
+		// });
+		//
+		// var oPanel2 = new sap.m.Panel({
+		// 	class:"SapUiResponsiveMargin",
+		// 	width:"auto",
+		// 	content:[oText2]
+		// });
 
 		var oButtonAccept = new sap.m.Button({
 			text:"Accept",
@@ -39,7 +39,7 @@ sap.ui.jsfragment("SMADJS.view.AttendanceFragment", {
 
 		var oAttendancePage = new sap.m.Page({
 			title:"Attendance Policy",
-			content: [oPanel,oPanel2],
+			content: [oPanel],
 			showFooter:true,
 			footer:[oBar],
 			showNavButton:true,

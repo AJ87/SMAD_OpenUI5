@@ -662,41 +662,43 @@ sap.ui.jsview("SMADJS.view.RegoJS", {
 		oSimpleForm.addContent(oHBox);
 		oWStep.addContent(oSimpleForm);
 
-		oSimpleForm = new sap.ui.layout.form.SimpleForm();
-		oCheckBox = new sap.m.CheckBox(this.createId("ConsentCBPickUp"),{
-			select:[oController.selected,oController],
-			selected:"{/consent/pickUp}",
-			valueStateText:"Required"
-		});
-		oText = new sap.m.ObjectIdentifier(this.createId("PickUpLink"),{
-			title:"Pick-up and Drop-off Policy",
-			titleActive:true,
-			titlePress:[oController.pickUp,oController]
-		});
-		oHBox = new sap.m.HBox(this.createId("HBoxPickUp"),{
-			alignItems:"Center",
-			items:[oCheckBox,oText]
-		});
-		oSimpleForm.addContent(oHBox);
-		oWStep.addContent(oSimpleForm);
+// no longer require this policy in SMAD 2023
+		// oSimpleForm = new sap.ui.layout.form.SimpleForm();
+		// oCheckBox = new sap.m.CheckBox(this.createId("ConsentCBPickUp"),{
+		// 	select:[oController.selected,oController],
+		// 	selected:"{/consent/pickUp}",
+		// 	valueStateText:"Required"
+		// });
+		// oText = new sap.m.ObjectIdentifier(this.createId("PickUpLink"),{
+		// 	title:"Pick-up and Drop-off Policy",
+		// 	titleActive:true,
+		// 	titlePress:[oController.pickUp,oController]
+		// });
+		// oHBox = new sap.m.HBox(this.createId("HBoxPickUp"),{
+		// 	alignItems:"Center",
+		// 	items:[oCheckBox,oText]
+		// });
+		// oSimpleForm.addContent(oHBox);
+		// oWStep.addContent(oSimpleForm);
 
-		oSimpleForm = new sap.ui.layout.form.SimpleForm();
-		oCheckBox = new sap.m.CheckBox(this.createId("ConsentCBCovid"),{
-			select:[oController.selected,oController],
-			selected:"{/consent/covid}",
-			valueStateText:"Required"
-		});
-		oText = new sap.m.ObjectIdentifier(this.createId("CovidLink"),{
-			title:"Cancellation due to Covid Policy",
-			titleActive:true,
-			titlePress:[oController.covid,oController]
-		});
-		oHBox = new sap.m.HBox(this.createId("HBoxCovid"),{
-			alignItems:"Center",
-			items:[oCheckBox,oText]
-		});
-		oSimpleForm.addContent(oHBox);
-		oWStep.addContent(oSimpleForm);
+// no longer require this policy for SMAD 2023
+		// oSimpleForm = new sap.ui.layout.form.SimpleForm();
+		// oCheckBox = new sap.m.CheckBox(this.createId("ConsentCBCovid"),{
+		// 	select:[oController.selected,oController],
+		// 	selected:"{/consent/covid}",
+		// 	valueStateText:"Required"
+		// });
+		// oText = new sap.m.ObjectIdentifier(this.createId("CovidLink"),{
+		// 	title:"Cancellation due to Covid Policy",
+		// 	titleActive:true,
+		// 	titlePress:[oController.covid,oController]
+		// });
+		// oHBox = new sap.m.HBox(this.createId("HBoxCovid"),{
+		// 	alignItems:"Center",
+		// 	items:[oCheckBox,oText]
+		// });
+		// oSimpleForm.addContent(oHBox);
+		// oWStep.addContent(oSimpleForm);
 
 		oWizard.addStep(oWStep);
 

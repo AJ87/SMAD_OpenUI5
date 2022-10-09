@@ -37,11 +37,12 @@ sap.ui.define([
 			this._oWizardAttendancePage = sap.ui.jsfragment("SMADJS.view.AttendanceFragment", this);
 			this._oApp.addPage(this._oWizardAttendancePage);
 
-			this._oWizardPickUpPage = sap.ui.jsfragment("SMADJS.view.PickUpFragment", this);
-			this._oApp.addPage(this._oWizardPickUpPage);
-
-			this._oWizardCovidPage = sap.ui.jsfragment("SMADJS.view.CovidFragment", this);
-			this._oApp.addPage(this._oWizardCovidPage);
+// no longer required for SMAD 2023
+			// this._oWizardPickUpPage = sap.ui.jsfragment("SMADJS.view.PickUpFragment", this);
+			// this._oApp.addPage(this._oWizardPickUpPage);
+			//
+			// this._oWizardCovidPage = sap.ui.jsfragment("SMADJS.view.CovidFragment", this);
+			// this._oApp.addPage(this._oWizardCovidPage);
 
 			this._oWizardPreRegoPage = sap.ui.jsfragment("SMADJS.view.PreRegoFragment", this);
 			this._oApp.addPage(this._oWizardPreRegoPage);
@@ -56,7 +57,7 @@ sap.ui.define([
 			var preRego = false;
 
 			// for testing - comment out for live
-			 //oDate = new Date("October 22, 2022 10:00:00");
+			 oDate = new Date("October 22, 2022 10:00:00");
 
 			this._overridePre = false;
 			// override pre rego being closed
@@ -280,25 +281,28 @@ sap.ui.define([
 			var privacySelectedEl = this.getView().byId("ConsentCBPrivacy");
 			var refundSelectedEl = this.getView().byId("ConsentCBRefund");
 			var attendanceSelectedEl = this.getView().byId("ConsentCBAttendance");
-			var pickUpSelectedEl = this.getView().byId("ConsentCBPickUp");
-			var covidSelectedEl = this.getView().byId("ConsentCBCovid");
+// no longer needed in SMAD 2023
+			// var pickUpSelectedEl = this.getView().byId("ConsentCBPickUp");
+			// var covidSelectedEl = this.getView().byId("ConsentCBCovid");
 			var termsSelected = termsSelectedEl.getSelected();
 			var firstAidSelected = firstAidSelectedEl.getSelected();
 			var privacySelected = privacySelectedEl.getSelected();
 			var refundSelected = refundSelectedEl.getSelected();
 			var attendanceSelected = attendanceSelectedEl.getSelected();
-			var pickUpSelected = pickUpSelectedEl.getSelected();
-			var covidSelected = covidSelectedEl.getSelected();
+// no longer needed in SMAD 2023
+			// var pickUpSelected = pickUpSelectedEl.getSelected();
+			// var covidSelected = covidSelectedEl.getSelected();
 
 			this.setValueState(termsSelected, termsSelectedEl);
 			this.setValueState(firstAidSelected, firstAidSelectedEl);
 			this.setValueState(privacySelected, privacySelectedEl);
 			this.setValueState(refundSelected, refundSelectedEl);
 			this.setValueState(attendanceSelected, attendanceSelectedEl);
-			this.setValueState(pickUpSelected, pickUpSelectedEl);
-			this.setValueState(covidSelected, covidSelectedEl);
+// no longer needed in SMAD 2023
+			// this.setValueState(pickUpSelected, pickUpSelectedEl);
+			// this.setValueState(covidSelected, covidSelectedEl);
 
-			if (termsSelected && firstAidSelected && privacySelected && refundSelected && attendanceSelected && pickUpSelected && covidSelected) {
+			if (termsSelected && firstAidSelected && privacySelected && refundSelected && attendanceSelected) {
 				this._wizard.validateStep(this.getView().byId("WizardStepConsent"));
 			} else {
 				this._wizard.invalidateStep(this.getView().byId("WizardStepConsent"));
@@ -319,12 +323,12 @@ sap.ui.define([
 		attendance: function() {
 			this._oApp.to(this._oWizardAttendancePage);
 		},
-		pickUp: function() {
-			this._oApp.to(this._oWizardPickUpPage);
-		},
-		covid: function() {
-			this._oApp.to(this._oWizardCovidPage);
-		},
+		// pickUp: function() {
+		// 	this._oApp.to(this._oWizardPickUpPage);
+		// },
+		// covid: function() {
+		// 	this._oApp.to(this._oWizardCovidPage);
+		// },
 		wizardCompleted: function() {
 
 			var valid = this.optionalValidation();
@@ -396,26 +400,26 @@ sap.ui.define([
 			this.selected();
 			this._oApp.backToPage(this._oPage.getId());
 		},
-		handleAcceptPickUp: function() {
-			this.getView().byId("ConsentCBPickUp").setProperty("selected",true);
-			this.selected();
-			this._oApp.backToPage(this._oPage.getId());
-		},
-		handleCancelPickUp: function() {
-			this.getView().byId("ConsentCBPickUp").setProperty("selected",false);
-			this.selected();
-			this._oApp.backToPage(this._oPage.getId());
-		},
-		handleAcceptCovid: function() {
-			this.getView().byId("ConsentCBCovid").setProperty("selected",true);
-			this.selected();
-			this._oApp.backToPage(this._oPage.getId());
-		},
-		handleCancelCovid: function() {
-			this.getView().byId("ConsentCBCovid").setProperty("selected",false);
-			this.selected();
-			this._oApp.backToPage(this._oPage.getId());
-		},
+		// handleAcceptPickUp: function() {
+		// 	this.getView().byId("ConsentCBPickUp").setProperty("selected",true);
+		// 	this.selected();
+		// 	this._oApp.backToPage(this._oPage.getId());
+		// },
+		// handleCancelPickUp: function() {
+		// 	this.getView().byId("ConsentCBPickUp").setProperty("selected",false);
+		// 	this.selected();
+		// 	this._oApp.backToPage(this._oPage.getId());
+		// },
+		// handleAcceptCovid: function() {
+		// 	this.getView().byId("ConsentCBCovid").setProperty("selected",true);
+		// 	this.selected();
+		// 	this._oApp.backToPage(this._oPage.getId());
+		// },
+		// handleCancelCovid: function() {
+		// 	this.getView().byId("ConsentCBCovid").setProperty("selected",false);
+		// 	this.selected();
+		// 	this._oApp.backToPage(this._oPage.getId());
+		// },
 		handleAcceptReview: function() {
 			var submitCallback = function() {
 				var that = this;
