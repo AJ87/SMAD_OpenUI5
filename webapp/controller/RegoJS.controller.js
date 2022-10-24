@@ -78,13 +78,17 @@ sap.ui.define([
 						this._oApp.to(this._oWizardPreRegoPage);
 						preRego = true;
 					} else {
-						if (oDate.getDate() === 9 && oDate.getHours() < 10) {
+						if (oDate.getDate() === 22 && oDate.getHours() < 10) {
 							this._oApp.to(this._oWizardPreRegoPage);
 							preRego = true;
 						}
 					}
 				}
 			}
+
+// make prerego page for rego full
+// remove for next year 
+		preRego = true;
 
 			if (preRego == false) {
 

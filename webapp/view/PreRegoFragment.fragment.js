@@ -2,7 +2,7 @@ sap.ui.jsfragment("SMADJS.view.PreRegoFragment", {
 	createContent: function(oController) {
 
 		var oText1 = new sap.m.Text({
-			text:"Registration opens 22 October at 10am."
+			text:"Registration for SMAD Camp 2023 is now full."
 		});
 
 		var oPanel = new sap.m.Panel({
