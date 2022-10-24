@@ -87,7 +87,8 @@ sap.ui.define([
 			}
 
 // make prerego page for rego full
-// remove for next year 
+// remove for next year
+	  this._oApp.to(this._oWizardPreRegoPage);
 		preRego = true;
 
 			if (preRego == false) {
